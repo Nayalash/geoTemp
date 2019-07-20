@@ -3,7 +3,7 @@
 <html>
 
 <head>
-    <title>Help</title>
+    <title>API</title>
     <link rel="icon" href="/img/favicon.ico">
     <link rel="stylesheet" href="/css/styles.css">
 </head>
@@ -12,9 +12,95 @@
 
     <div class="main-content">
         {{>header}}
-        <p>DOCS COMING SOON</p>
+
+        <div>
+            <h2 id="usage">Usage</h2>
+
+            <p>This application can be used in two ways... As a client-side web app by using this <a
+                    href="https://nayalash-geo-temp.herokuapp.com/">link</a>. Or the server side OPEN API that returns
+                HTTP JSON. </p>
+
+            <p>When using the web app, you simply enter a location and it returns the weather for that provided
+                location.</p>
+
+            <p>For using the API refer to the next section below.</p>
+
+            <h2 id="apiusage">API USAGE</h2>
+
+            <p>JSON RESPONSE that returns formatted address, forecast and inputted address.</p>
+
+            <h3 id="getendpoint">GET ENDPOINT</h3>
+
+            <pre><code>Example
+
+URL: https://nayalash-geo-temp.herokuapp.com/dev?address=boston
+</code></pre>
+
+            <p>You can customize the query key value pair "address" with whatever location you like.</p>
+
+            <p>JSON RESPONSE should look like this.</p>
+
+            <pre><code>{
+    "forecast": "Humid and partly cloudy throughout the day. It is currently 81.95 degress out. This high today is 90.48 with                  a low of 78.66. There is a 0% chance of rain.",
+    "location": "Boston, Massachusetts, United States",
+    "address": "boston"
+}
+</code></pre>
+
+            <p>Error Response should look like this</p>
+
+            <pre><code>{
+"error": "You must provide an address!"
+}
+</code></pre>
+
+            <h3 id="runningapplicationonline">Running Application Online</h3>
+
+            <p>Go to this <a href="https://nayalash-geo-temp.herokuapp.com/">link</a>.</p>
+
+            <h3 id="runningapplicationonyourdevice">Running Application On Your Device</h3>
+
+            <p>Clone the repository on to your machine.</p>
+
+            <p>Open the terminal at the entry point being the geoTemp-master folder.</p>
+
+            <p>Run Command Below</p>
+
+            <pre><code>$ node src/app.js
+</code></pre>
+
+            <p>View the project in your browser at</p>
+
+            <pre><code>localhost:3000
+</code></pre>
+
+            <h2 id="deployment">Deployment</h2>
+
+            <p>The application was deployed on heroku.</p>
+
+            <p><a href="https://www.heroku.com/">Heroku Website</a></p>
+
+            <h2 id="dependencies">Dependencies</h2>
+
+            <ul>
+                <li><a href="https://www.npmjs.com/package/express">express</a> - Web Framework</li>
+
+                <li><a href="https://www.npmjs.com/package/hbs">hbs</a> - Templating Engine</li>
+
+                <li><a href="https://www.npmjs.com/package/request">request</a> - HTTP Request package</li>
+            </ul>
+
+            <h2 id="acknowledgments">Acknowledgments</h2>
+
+            <ul>
+                <li>Andrew Mead Udemy Course.
+                    <a href="https://mead.io/">Link</a></li>
+            </ul>
+
+        </div>
+
     </div>
-    
+
     {{>footer}}
 </body>
 
